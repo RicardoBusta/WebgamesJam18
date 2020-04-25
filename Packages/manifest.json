@@ -2,6 +2,7 @@
   "dependencies": {
     "com.dbrizov.naughtyattributes": "2.0.1",
     "com.demigiant.dotween": "1.2.32",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.5.0",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.render-pipelines.universal": "7.3.1",

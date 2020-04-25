@@ -13,6 +13,7 @@ public class PlayButton : MonoBehaviour
 
     private void OnButtonPress()
     {
+        Debug.Log("Click");
         SceneManager.LoadScene("Scenes/GameScene");
     }
 }
