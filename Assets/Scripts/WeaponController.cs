@@ -1,12 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
     public Animator animator;
 
-    public void Attack()
+    private static readonly int Attack1 = Animator.StringToHash("Attack");
+    private static readonly int Walk = Animator.StringToHash("Walk");
+
+    public float maxAmmo;
+    public float ammo;
+
+    public event Action FinishAttackEvent;
+
+    public bool Attack()
     {
-        animator.SetTrigger("Attack");
+        var canAttack = ammo >= 1;
+        if (canAttack)
+        {
+            animator.SetTrigger(Attack1);
+            ammo -= 1;
+        }
+
+        return canAttack;
     }
 
     public void Enable(bool rightHand)
@@ -22,6 +38,11 @@ public class WeaponController : MonoBehaviour
 
     public void SetWalkAnim(bool walk)
     {
-        animator.SetBool("Walk", walk);
+        animator.SetBool(Walk, walk);
+    }
+
+    public void FinishAttack()
+    {
+        FinishAttackEvent?.Invoke();
     }
 }
