@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="132.09249"
-     inkscape:cy="893.5854"
+     inkscape:zoom="0.5"
+     inkscape:cx="1093.0825"
+     inkscape:cy="1170.9537"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -53,15 +53,128 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.7895357;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:2.57525611;stroke-miterlimit:4;stroke-dasharray:none"
        id="rect817"
-       width="66.943794"
-       height="66.943794"
-       x="5.3524709"
-       y="31.220615"
-       rx="25"
-       ry="25"
+       width="65.158081"
+       height="65.158081"
+       x="5.3171821"
+       y="33.041622"
+       rx="10.567363"
+       ry="10.567364"
        inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\UI.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect819"
+       width="6.0802197"
+       height="61.218079"
+       x="127.9888"
+       y="43.570564"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#666666;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 149.82001,42.845044 a 19.844762,15.835719 0 0 1 -18.7911,10.806059 19.844762,15.835719 0 0 1 -18.79058,-10.788488 26.392864,24.254709 0 0 0 -7.60212,17.00258 26.392864,24.254709 0 0 0 7.56078,16.984492 19.844762,15.835719 0 0 1 18.83192,-10.904243 19.844762,15.835719 0 0 1 18.83244,10.880471 26.392864,24.254709 0 0 0 7.56027,-16.96072 26.392864,24.254709 0 0 0 -7.60161,-17.020151 z"
+       id="path825"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 170.38431,43.895512 v 61.739378 h 8.01811 V 32.783012 Z"
+       id="rect829"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path838"
+       d="m 170.38431,41.059666 v 47.403793 h 8.01811 V 32.527434 Z"
+       style="fill:#666666;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect832"
+       width="17.37252"
+       height="6.0135641"
+       x="165.70711"
+       y="85.322533"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#666666;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path834"
+       cx="219.69557"
+       cy="73.028137"
+       r="26.726952"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       r="17.907057"
+       cy="73.028137"
+       cx="219.69557"
+       id="circle836"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#666666;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 259.85451,42.105437 v 4.581765 h -3.43331 v 22.036929 h 3.43331 v 10.718561 h 5.34541 V 68.724131 h 3.43384 V 46.687202 h -3.43384 v -4.581765 z"
+       id="rect840"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccc"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#666666;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect842"
+       width="6.6817379"
+       height="44.742413"
+       x="268.04453"
+       y="34.700188"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 258.05482,78.945567 v 8.680609 l -5.85855,6.558256 V 106.563 h 18.04849 V 94.184432 l 5.85857,-6.564458 v -8.674407 z"
+       id="rect851"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       y="5.9739971"
+       x="303.3241"
+       height="73.468605"
+       width="6.6817379"
+       id="rect861"
+       style="fill:#666666;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:connector-curvature="0"
+       id="path863"
+       d="m 297.03857,64.658067 v 22.968109 l -5.85855,6.558256 V 106.563 h 11.16932 V 94.184432 l 5.85857,-6.564458 V 64.658067 Z"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\weapon_icons.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
   </g>
