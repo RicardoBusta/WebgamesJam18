@@ -10,8 +10,19 @@ public class WeaponController : MonoBehaviour
 
     public float maxAmmo;
     public float ammo;
+    public float rechargeAmmoScale;
 
     public event Action FinishAttackEvent;
+
+    public ExtraWeaponBehaviour extraBehaviour;
+
+    private bool _hasExtraBehaviour;
+    private float _rechargeAmmoScale;
+
+    private void Start()
+    {
+        _hasExtraBehaviour = extraBehaviour != null;
+    }
 
     public bool Attack()
     {
@@ -44,5 +55,13 @@ public class WeaponController : MonoBehaviour
     public void FinishAttack()
     {
         FinishAttackEvent?.Invoke();
+    }
+
+    public void TriggerExtraBehaviour()
+    {
+        if (_hasExtraBehaviour)
+        {
+            extraBehaviour.TriggerEffect();
+        }
     }
 }

@@ -79,26 +79,24 @@ public class GameController : MonoBehaviour
     {
         if (player.paused) return;
 
-        if (player.weapon1.ammo < player.weapon1.maxAmmo)
+        var w1 = player.weapon1;
+        HandleWeapon(w1, weapon1Slider);
+
+        var w2 = player.weapon2;
+        HandleWeapon(w2, weapon2Slider);
+    }
+
+    private void HandleWeapon(WeaponController weapon, Slider slider)
+    {
+        if (weapon.ammo < weapon.maxAmmo)
         {
-            player.weapon1.ammo += Time.deltaTime;
-            if (player.weapon1.ammo > player.weapon1.maxAmmo)
+            weapon.ammo += Time.deltaTime * weapon.rechargeAmmoScale;
+            if (weapon.ammo > weapon.maxAmmo)
             {
-                player.weapon1.ammo = player.weapon1.maxAmmo;
+                weapon.ammo = weapon.maxAmmo;
             }
 
-            weapon1Slider.value = player.weapon1.ammo;
-        }
-
-        if (player.weapon2.ammo < player.weapon2.maxAmmo)
-        {
-            player.weapon2.ammo += Time.deltaTime;
-            if (player.weapon2.ammo > player.weapon2.maxAmmo)
-            {
-                player.weapon2.ammo = player.weapon2.maxAmmo;
-            }
-
-            weapon2Slider.value = player.weapon2.ammo;
+            slider.value = weapon.ammo;
         }
     }
 }
