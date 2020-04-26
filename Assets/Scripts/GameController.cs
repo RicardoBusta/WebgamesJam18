@@ -26,6 +26,11 @@ public class GameController : MonoBehaviour
     public Image screenFlash;
     public SpriteRenderer shockWave;
 
+    public Image hudWeapon1Icon;
+    public Image hudWeapon2Icon;
+
+    public EnemySpawner enemySpawner;
+    
     private void Start()
     {
         foreach (var weaponButton in weaponButtons)
@@ -51,6 +56,8 @@ public class GameController : MonoBehaviour
             player.weapon1 = button.playerWeapon;
             weaponSliderImage1.color = button.enabledColor;
             weapon1Slider.maxValue = player.weapon1.maxAmmo;
+            hudWeapon1Icon.sprite = button.icon.sprite;
+            hudWeapon1Icon.color = player.col1;
         }
         else if (!playerHasRightWeapon)
         {
@@ -61,6 +68,8 @@ public class GameController : MonoBehaviour
             player.weapon2 = button.playerWeapon;
             weaponSliderImage2.color = button.enabledColor;
             weapon2Slider.maxValue = player.weapon2.maxAmmo;
+            hudWeapon2Icon.sprite = button.icon.sprite;
+            hudWeapon2Icon.color = player.col2;
         }
 
         waitPlayerInput = false;
@@ -80,6 +89,7 @@ public class GameController : MonoBehaviour
         playerGuiCanvas.gameObject.SetActive(true);
         player.paused = false;
         player.Init();
+        enemySpawner.Init();
     }
 
     private void Update()

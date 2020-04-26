@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 815255584566283368}
   - component: {fileID: 179562880315257231}
   - component: {fileID: 695131465986575986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 516694846672973128}
   - component: {fileID: 516694846672973132}
   - component: {fileID: 8343748757344211776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 2712823757696649229}
   - component: {fileID: 1177329235218478476}
   - component: {fileID: 3087455104761496313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}

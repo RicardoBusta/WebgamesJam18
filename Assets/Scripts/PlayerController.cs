@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public Color col1;
     public Color col2;
 
-    [FormerlySerializedAs("Weapon1")] public WeaponController weapon1;
-    [FormerlySerializedAs("Weapon2")] public WeaponController weapon2;
+    public WeaponController weapon1;
+    public WeaponController weapon2;
 
     public float playerSpeed;
 
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     public GameController controller;
 
-    [FormerlySerializedAs("Weapons")] public WeaponController[] weapons;
+    public WeaponController[] weapons;
 
     private bool lastAttackRightHand;
 
