@@ -1,20 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
     [RequireComponent(typeof(PlayerController))]
     public class KeyboardInput : MonoBehaviour
     {
-        private PlayerController controller;
+        private PlayerController _controller;
 
-        private RaycastHit[] hit = new RaycastHit[1];
+        private readonly RaycastHit[] _hit = new RaycastHit[1];
 
-        private Camera cam;
+        private Camera _cam;
+        private const float Tolerance = 0.01f;
 
         private void Start()
         {
-            cam = Camera.main;
-            controller = GetComponent<PlayerController>();
+            _cam = Camera.main;
+            _controller = GetComponent<PlayerController>();
         }
 
         private void Update()
@@ -22,27 +24,34 @@ namespace DefaultNamespace
             var v = Input.GetAxis("Vertical");
             var h = Input.GetAxis("Horizontal");
 
-            controller.Move(new Vector3(h, 0, v));
+            if (Math.Abs(v) < Tolerance && Math.Abs(h) < Tolerance)
+            {
+                _controller.Stop();
+            }
+            else
+            {
+                _controller.Move(new Vector3(h, 0, v));
+            }
 
             var lmb = Input.GetMouseButtonDown(0);
 
             if (lmb)
             {
-                controller.AttackLeftHand();
+                _controller.AttackLeftHand();
             }
 
             var rmb = Input.GetMouseButtonDown(1);
             if (rmb)
             {
-                controller.AttackRightHand();
+                _controller.AttackRightHand();
             }
 
-            if (Physics.RaycastNonAlloc(cam.ScreenPointToRay(Input.mousePosition), hit, LayerMask.GetMask("Input")) > 0)
+            if (Physics.RaycastNonAlloc(_cam.ScreenPointToRay(Input.mousePosition), _hit, LayerMask.GetMask("Input")) >
+                0)
             {
-                var mousePosition = hit[0].point;
+                var mousePosition = _hit[0].point;
                 mousePosition.y = 0;
-                controller.LookAt(mousePosition);
-                Debug.DrawLine(Vector3.zero, mousePosition);
+                _controller.LookAt(mousePosition);
             }
         }
     }

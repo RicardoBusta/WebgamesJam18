@@ -9,15 +9,19 @@ public class WeaponButton : MonoBehaviour
     private Button _button;
 
     public Color enabledColor;
+    public Material materialColor;
 
     public Image icon;
     public TextMeshProUGUI text;
+
+    public WeaponController playerWeapon;
 
     private static readonly Color DisabledColor = new Color(0.4f, 0.4f, 0.4f);
 
     private void Awake()
     {
         _button = GetComponent<Button>();
+        enabledColor = materialColor.GetColor("_BaseColor");
     }
 
     public void SetListener(Action<WeaponButton> buttonAction)
@@ -27,12 +31,14 @@ public class WeaponButton : MonoBehaviour
 
     public void Enable()
     {
+        playerWeapon.Disable();
         _button.interactable = true;
         SetColor(enabledColor);
     }
 
-    public void Disable()
+    public void Disable(bool rightHand)
     {
+        playerWeapon.Enable(rightHand);
         _button.interactable = false;
         SetColor(DisabledColor);
     }
