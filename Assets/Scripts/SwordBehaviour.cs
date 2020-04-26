@@ -1,16 +1,21 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
-public class SwordBehaviour : MonoBehaviour
+public class SwordBehaviour : ExtraWeaponBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerController player;
 
-    // Update is called once per frame
-    void Update()
+    public float duration;
+    public float distance;
+
+    public override void TriggerEffect()
     {
-        
+        player.dashing = true;
+
+        var tr = player.transform;
+
+        var targetPosition = tr.position + tr.forward * distance;
+
+        player.transform.DOMove(targetPosition, duration).OnComplete(() => player.dashing = false);
     }
 }

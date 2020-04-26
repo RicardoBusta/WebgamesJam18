@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public bool attacking;
 
+    public bool dashing;
+
     [FormerlySerializedAs("Weapons")] public WeaponController[] weapons;
 
     private void Start()
@@ -49,6 +51,8 @@ public class PlayerController : MonoBehaviour
     public void Move(Vector3 direction)
     {
         if (paused) return;
+        if (dashing) return;
+
         weapon1.SetWalkAnim(true);
         weapon2.SetWalkAnim(true);
         var scale = Time.deltaTime * playerSpeed;
@@ -58,6 +62,7 @@ public class PlayerController : MonoBehaviour
     public void LookAt(Vector3 position)
     {
         if (paused) return;
+        if (dashing) return;
         _tr.rotation = Quaternion.LookRotation(position - _tr.position, Vector3.up);
     }
 
@@ -65,6 +70,7 @@ public class PlayerController : MonoBehaviour
     {
         if (paused) return;
         if (attacking) return;
+        if (dashing) return;
         if (weapon1.Attack())
         {
             attacking = true;
@@ -76,6 +82,7 @@ public class PlayerController : MonoBehaviour
     {
         if (paused) return;
         if (attacking) return;
+        if (dashing) return;
         if (weapon2.Attack())
         {
             attacking = true;
