@@ -24,7 +24,11 @@ public class PlayerController : MonoBehaviour
 
     public bool dashing;
 
+    public GameController controller;
+
     [FormerlySerializedAs("Weapons")] public WeaponController[] weapons;
+
+    private bool lastAttackRightHand;
 
     private void Start()
     {
@@ -63,7 +67,9 @@ public class PlayerController : MonoBehaviour
     {
         if (paused) return;
         if (dashing) return;
-        _tr.rotation = Quaternion.LookRotation(position - _tr.position, Vector3.up);
+        var lookVector = position - _tr.position;
+        if (lookVector == Vector3.zero) return;
+        _tr.rotation = Quaternion.LookRotation(lookVector, Vector3.up);
     }
 
     public void AttackLeftHand()
@@ -76,6 +82,12 @@ public class PlayerController : MonoBehaviour
             attacking = true;
             SetTint(mat1, col1);
         }
+
+        if (lastAttackRightHand)
+        {
+            lastAttackRightHand = false;
+            controller.PlayShockWave(col1);
+        }
     }
 
     public void AttackRightHand()
@@ -87,6 +99,12 @@ public class PlayerController : MonoBehaviour
         {
             attacking = true;
             SetTint(mat2, col2);
+        }
+
+        if (!lastAttackRightHand)
+        {
+            lastAttackRightHand = true;
+            controller.PlayShockWave(col2);
         }
     }
 

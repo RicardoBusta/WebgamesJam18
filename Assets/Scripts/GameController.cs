@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,9 @@ public class GameController : MonoBehaviour
     public Image weaponSliderImage1;
     public Image weaponSliderImage2;
 
+    public Image screenFlash;
+    public SpriteRenderer shockWave;
+
     private void Start()
     {
         foreach (var weaponButton in weaponButtons)
@@ -29,6 +33,9 @@ public class GameController : MonoBehaviour
             weaponButton.SetListener(WeaponButtonClicked);
             weaponButton.Enable();
         }
+
+        shockWave.gameObject.SetActive(false);
+        screenFlash.gameObject.SetActive(false);
 
         StartCoroutine(GameCoroutine());
     }
@@ -84,6 +91,36 @@ public class GameController : MonoBehaviour
 
         var w2 = player.weapon2;
         HandleWeapon(w2, weapon2Slider);
+    }
+
+    private Tween changeFlash;
+
+    public void PlayShockWave(Color color)
+    {
+        changeFlash?.Kill();
+
+        shockWave.color = color;
+        screenFlash.color = color;
+
+        shockWave.gameObject.SetActive(true);
+        screenFlash.gameObject.SetActive(true);
+
+        var baseColor = color;
+        changeFlash = DOVirtual.Float(0, 1, 0.5f, f =>
+        {
+            var shockWaveColor = baseColor;
+            shockWaveColor.a = (1 - f);
+            var flashColor = baseColor;
+            flashColor.a = Mathf.Sin(f * Mathf.PI) * 0.05f;
+            shockWave.color = shockWaveColor;
+            screenFlash.color = flashColor;
+            var scale = f * 10;
+            shockWave.transform.localScale = new Vector3(scale, scale, scale);
+        }).OnComplete(() =>
+        {
+            shockWave.gameObject.SetActive(false);
+            screenFlash.gameObject.SetActive(false);
+        });
     }
 
     private void HandleWeapon(WeaponController weapon, Slider slider)
