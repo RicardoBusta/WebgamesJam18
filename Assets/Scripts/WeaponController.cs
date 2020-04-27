@@ -18,6 +18,8 @@ public class WeaponController : MonoBehaviour
 
     public event Action FinishAttackEvent;
 
+    public Sprite icon;
+
     private void Start()
     {
         _hasExtraBehaviour = extraBehaviour != null;

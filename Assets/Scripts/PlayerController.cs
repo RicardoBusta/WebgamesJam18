@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if (paused) return;
         if (dashing) return;
+        if (controller.waitPlayerInput) return;
 
         weapon1.SetWalkAnim(true);
         weapon2.SetWalkAnim(true);
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         if (paused) return;
         if (dashing) return;
+        if (controller.waitPlayerInput) return;
         var lookVector = position - _tr.position;
         if (lookVector == Vector3.zero) return;
         _tr.rotation = Quaternion.LookRotation(lookVector, Vector3.up);
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (paused) return;
         if (attacking) return;
         if (dashing) return;
+        if (controller.waitPlayerInput) return;
         if (weapon1.Attack())
         {
             attacking = true;
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         if (paused) return;
         if (attacking) return;
         if (dashing) return;
+        if (controller.waitPlayerInput) return;
         if (weapon2.Attack())
         {
             attacking = true;

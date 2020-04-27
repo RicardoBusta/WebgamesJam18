@@ -36,16 +36,21 @@ public class GameController : MonoBehaviour
     public Image weaponSliderImage1;
     public Image weaponSliderImage2;
 
+    public WeaponToReplaceMenu replaceMenu;
+
+    private const int MAX_SCORE = 100;
+
     private void Start()
     {
         selectWeaponMenu.gameObject.SetActive(true);
+        replaceMenu.gameObject.SetActive(false);
         foreach (var weaponButton in weaponButtons)
         {
             weaponButton.SetListener(WeaponButtonClicked);
             weaponButton.Enable();
         }
 
-        scoreSlider.maxValue = 100;
+        scoreSlider.maxValue = MAX_SCORE;
         scoreSlider.value = 0;
 
         shockWave.gameObject.SetActive(false);
@@ -104,6 +109,12 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         if (player.paused) return;
+
+        if (score >= MAX_SCORE)
+        {
+            score = 0;
+            replaceMenu.Show();
+        }
 
         var w1 = player.weapon1;
         HandleWeapon(w1, weapon1Slider);

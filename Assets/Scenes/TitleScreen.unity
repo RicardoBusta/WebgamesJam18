@@ -1878,23 +1878,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dee1445a23e8954b9ea73e4433fc469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 10
-  swapTime: 2
-  Weapons:
-  - {fileID: 1568200320}
-  - {fileID: 1287226445}
-  - {fileID: 195823078}
-  - {fileID: 369684428}
-  - {fileID: 152288424}
   Materials:
   - {fileID: 2100000, guid: bb29b268b528a634d94c1cab566bbf23, type: 2}
   - {fileID: 2100000, guid: 574e5e3b07fb29a47a94115ad20b2968, type: 2}
   - {fileID: 2100000, guid: 9d03fa116abb58547806d97d4385c9a4, type: 2}
   - {fileID: 2100000, guid: e3bc390ad91f711429ccf84193a48b5b, type: 2}
   - {fileID: 2100000, guid: 98ad14ebf1e8db449befb4179f4da4da, type: 2}
-  weaponBase: {fileID: 731181155}
-  playerBody: {fileID: 764893937}
   playerBase: {fileID: 374706366}
+  playerBody: {fileID: 764893937}
+  rotateSpeed: 10
+  swapTime: 2
+  weaponBase: {fileID: 731181155}
+  Weapons:
+  - {fileID: 1568200320}
+  - {fileID: 1287226445}
+  - {fileID: 195823078}
+  - {fileID: 369684428}
+  - {fileID: 152288424}
 --- !u!4 &1499757005
 Transform:
   m_ObjectHideFlags: 0
@@ -1969,7 +1969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Something Colors
+  m_text: HUE BReaker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2014,7 +2014,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 10
+  m_firstOverflowCharacterIndex: 4
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1523415095}
-    characterCount: 16
+    characterCount: 11
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -2482,9 +2482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e88832ba986b24882447a4769fa111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breathingSpeed: 3
-  breathingAmplitudeY: 0.03
   breathingAmplitudeX: 0.01
+  breathingAmplitudeY: 0.03
+  breathingSpeed: 3
 --- !u!4 &1801583220
 Transform:
   m_ObjectHideFlags: 0

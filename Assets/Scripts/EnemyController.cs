@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace DefaultNamespace
 {
@@ -39,8 +41,13 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            if (!initialized) return;
-            if (controller.waitPlayerInput) return;
+            if (!initialized || target.paused || controller.waitPlayerInput)
+            {
+                rb.velocity = Vector3.zero;
+                rb.position = transform.position;
+                return;
+            }
+
             var targetDirection = target.transform.position - transform.position;
             targetDirection.y = 0;
             Rotate(targetDirection);
@@ -70,6 +77,14 @@ namespace DefaultNamespace
         {
             initialized = false;
             gameObject.SetActive(false);
+        }
+
+        public void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject == target.gameObject)
+            {
+                target.gameObject.SetActive(false);
+            }
         }
     }
 }
