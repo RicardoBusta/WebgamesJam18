@@ -25,16 +25,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="729.21661"
-     inkscape:cy="152.73518"
+     inkscape:zoom="1"
+     inkscape:cx="533.06248"
+     inkscape:cy="245.44971"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -193,6 +193,23 @@
        cy="216.92606"
        r="29.185829"
        inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\shockwave.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 81.756249,233.10308 -14.552083,7.14375 13.49375,14.2875 7.408333,-9.525 v 10.84792 l 28.310421,-4.49792 z m 87.454751,-1.95735 -40.6235,21.39711 33.18102,5.27176 v -12.71423 l 8.68289,11.16371 15.81525,-16.74556 z"
+       id="path835"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\enemyface.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#000000;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 95.249999,260.75208 6.350001,18.65313 12.30312,-14.68438 5.82084,16.66875 10.31875,-16.80104 13.36145,16.40417 10.45105,-17.72709 6.87916,34.13126 -15.74271,-9.12813 -10.18645,13.09688 -13.75834,-13.75834 -15.34583,14.2875 -5.953125,-14.55208 -13.758333,14.68437 z"
+       id="path842"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Projects\WebgamesJam18\Assets\Sprites\enemyface.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
   </g>
