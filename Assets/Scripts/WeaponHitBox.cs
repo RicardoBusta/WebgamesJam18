@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+﻿using DefaultNamespace;
+using UnityEngine;
 
 public class WeaponHitBox : MonoBehaviour
 {
+    public GameController controller;
+
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.SetActive(false);
+        var enemy = other.GetComponent<EnemyController>();
+        enemy.Die();
+
+        controller.score++;
     }
 }

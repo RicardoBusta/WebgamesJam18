@@ -2,31 +2,27 @@
 
 public class RotateAndSwapModel : MonoBehaviour
 {
+    private float _currentSwapTime;
+
+    private int index;
+    public Material[] Materials;
+    public MeshRenderer playerBase;
+    public MeshRenderer playerBody;
     public float rotateSpeed;
 
     public float swapTime;
 
-    private float _currentSwapTime;
+    public MeshRenderer weaponBase;
 
     public GameObject[] Weapons;
-    public Material[] Materials;
-
-    public MeshRenderer weaponBase;
-    public MeshRenderer playerBody;
-    public MeshRenderer playerBase;
-
-    private int index;
 
     private void Start()
     {
         _currentSwapTime = 0;
-        for (var i = 0; i < Weapons.Length; i++)
-        {
-            Weapons[i].SetActive(false);
-        }
+        for (var i = 0; i < Weapons.Length; i++) Weapons[i].SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
         _currentSwapTime -= Time.deltaTime;

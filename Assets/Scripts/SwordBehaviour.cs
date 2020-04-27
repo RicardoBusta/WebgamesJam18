@@ -1,12 +1,11 @@
 ﻿using DG.Tweening;
-using UnityEngine;
 
 public class SwordBehaviour : ExtraWeaponBehaviour
 {
-    public PlayerController player;
+    public float distance;
 
     public float duration;
-    public float distance;
+    public PlayerController player;
 
     public override void TriggerEffect()
     {

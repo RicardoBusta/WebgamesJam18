@@ -5,39 +5,48 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public SelectWeaponMenu selectWeaponMenu;
-    public WeaponButton[] weaponButtons;
+    private Tween changeFlash;
 
-    public Canvas playerGuiCanvas;
+    public EnemySpawner enemySpawner;
+
+    public Image hudWeapon1Icon;
+    public Image hudWeapon2Icon;
 
     public PlayerController player;
 
+    public Canvas playerGuiCanvas;
+
     public bool playerHasLeftWeapon;
     public bool playerHasRightWeapon;
+
+    public int score;
+
+    public Slider scoreSlider;
+
+    public Image screenFlash;
+    public SelectWeaponMenu selectWeaponMenu;
+    public SpriteRenderer shockWave;
 
     public bool waitPlayerInput;
 
     public Slider weapon1Slider;
     public Slider weapon2Slider;
+    public WeaponButton[] weaponButtons;
 
     public Image weaponSliderImage1;
     public Image weaponSliderImage2;
 
-    public Image screenFlash;
-    public SpriteRenderer shockWave;
-
-    public Image hudWeapon1Icon;
-    public Image hudWeapon2Icon;
-
-    public EnemySpawner enemySpawner;
-    
     private void Start()
     {
+        selectWeaponMenu.gameObject.SetActive(true);
         foreach (var weaponButton in weaponButtons)
         {
             weaponButton.SetListener(WeaponButtonClicked);
             weaponButton.Enable();
         }
+
+        scoreSlider.maxValue = 100;
+        scoreSlider.value = 0;
 
         shockWave.gameObject.SetActive(false);
         screenFlash.gameObject.SetActive(false);
@@ -101,9 +110,9 @@ public class GameController : MonoBehaviour
 
         var w2 = player.weapon2;
         HandleWeapon(w2, weapon2Slider);
-    }
 
-    private Tween changeFlash;
+        scoreSlider.value = score;
+    }
 
     public void PlayShockWave(Color color)
     {
@@ -119,7 +128,7 @@ public class GameController : MonoBehaviour
         changeFlash = DOVirtual.Float(0, 1, 0.5f, f =>
         {
             var shockWaveColor = baseColor;
-            shockWaveColor.a = (1 - f);
+            shockWaveColor.a = 1 - f;
             var flashColor = baseColor;
             flashColor.a = Mathf.Sin(f * Mathf.PI) * 0.05f;
             shockWave.color = shockWaveColor;
@@ -138,10 +147,7 @@ public class GameController : MonoBehaviour
         if (weapon.ammo < weapon.maxAmmo)
         {
             weapon.ammo += Time.deltaTime * weapon.rechargeAmmoScale;
-            if (weapon.ammo > weapon.maxAmmo)
-            {
-                weapon.ammo = weapon.maxAmmo;
-            }
+            if (weapon.ammo > weapon.maxAmmo) weapon.ammo = weapon.maxAmmo;
 
             slider.value = weapon.ammo;
         }

@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 public class ShieldBehaviour : ExtraWeaponBehaviour
 {
-    public GameObject ShieldProjectile;
-    public GameObject ShieldSpawnPosition;
-    public GameObject Player;
+    private Sequence _sequence;
 
     public float distance;
+    public GameObject Player;
+    public GameObject ShieldProjectile;
+    public GameObject ShieldSpawnPosition;
     public float travelTime;
-
-    private Sequence _sequence;
 
     public override void TriggerEffect()
     {

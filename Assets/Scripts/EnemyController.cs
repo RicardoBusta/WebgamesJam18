@@ -1,24 +1,28 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DefaultNamespace
 {
     [RequireComponent(typeof(Rigidbody))]
     public class EnemyController : MonoBehaviour
     {
-        public float thresholdDistance;
+        public MeshRenderer body;
 
-        public Transform targetTransform;
-
-        public float moveSpeed;
-        public float rotationSpeed;
+        public GameController controller;
 
         private float currentAngle;
-        private float targetAngle;
 
-        private Transform tr;
+        private bool initialized;
+
+        public float moveSpeed;
 
         private Rigidbody rb;
+        public float rotationSpeed;
+
+        public PlayerController target;
+        private float targetAngle;
+        public float thresholdDistance;
+
+        private Transform tr;
 
         private void Start()
         {
@@ -26,20 +30,25 @@ namespace DefaultNamespace
             tr = transform;
         }
 
+        public void Init()
+        {
+            initialized = true;
+            var result = Random.Range(0, 2);
+            body.material = result == 0 ? target.mat1 : target.mat2;
+        }
+
         private void Update()
         {
-            var targetDirection = targetTransform.position - transform.position;
+            if (!initialized) return;
+            if (controller.waitPlayerInput) return;
+            var targetDirection = target.transform.position - transform.position;
             targetDirection.y = 0;
             Rotate(targetDirection);
             rb.velocity = Vector3.zero;
             if (Vector3.SqrMagnitude(targetDirection) < thresholdDistance * thresholdDistance)
-            {
                 Attack();
-            }
             else
-            {
                 Move(targetDirection);
-            }
         }
 
         private void Rotate(Vector3 direction)
@@ -50,11 +59,17 @@ namespace DefaultNamespace
 
         private void Move(Vector3 direction)
         {
-            rb.velocity = tr.forward * (moveSpeed);
+            rb.velocity = tr.forward * moveSpeed;
         }
 
         private void Attack()
         {
+        }
+
+        public void Die()
+        {
+            initialized = false;
+            gameObject.SetActive(false);
         }
     }
 }

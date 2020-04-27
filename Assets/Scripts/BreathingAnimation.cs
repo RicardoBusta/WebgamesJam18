@@ -1,20 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BreathingAnimation : MonoBehaviour
 {
-    public float breathingSpeed;
-    public float breathingAmplitudeY;
-    public float breathingAmplitudeX;
-
     private float angle;
-    
+    public float breathingAmplitudeX;
+    public float breathingAmplitudeY;
+    public float breathingSpeed;
+
     private void Update()
     {
         angle += breathingSpeed * Time.deltaTime;
         var sin = Mathf.Sin(angle);
         var cos = Mathf.Cos(angle);
-        transform.localScale = new Vector3(1  + cos * breathingAmplitudeX, 1 + sin * breathingAmplitudeY, 1 + cos * breathingAmplitudeX);
+        transform.localScale = new Vector3(1 + cos * breathingAmplitudeX, 1 + sin * breathingAmplitudeY,
+            1 + cos * breathingAmplitudeX);
     }
 }

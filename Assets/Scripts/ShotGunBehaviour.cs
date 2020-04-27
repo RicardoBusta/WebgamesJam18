@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class ShotGunBehaviour : ExtraWeaponBehaviour
 {
-    public Animator[] ShotGunEffects;
-    public WeaponController ShotGunController;
+    private static readonly int Fire = Animator.StringToHash("Fire");
+
+    private int effectIndex;
 
     public GameObject GunTip;
 
     public GameObject player;
-
-    private int effectIndex;
-    private static readonly int Fire = Animator.StringToHash("Fire");
+    public WeaponController ShotGunController;
+    public Animator[] ShotGunEffects;
 
     public override void TriggerEffect()
     {

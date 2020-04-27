@@ -6,17 +6,16 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class WeaponButton : MonoBehaviour
 {
+    private static readonly Color DisabledColor = new Color(0.4f, 0.4f, 0.4f);
     private Button _button;
 
     public Color enabledColor;
-    public Material materialColor;
 
     public Image icon;
-    public TextMeshProUGUI text;
+    public Material materialColor;
 
     public WeaponController playerWeapon;
-
-    private static readonly Color DisabledColor = new Color(0.4f, 0.4f, 0.4f);
+    public TextMeshProUGUI text;
 
     private void Awake()
     {

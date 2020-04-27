@@ -1,43 +1,38 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    public Material mat1;
-    public Material mat2;
+    private Transform _tr;
+
+    public bool attacking;
 
     public Color col1;
     public Color col2;
 
-    public WeaponController weapon1;
-    public WeaponController weapon2;
+    public GameController controller;
+
+    public bool dashing;
+
+    private bool lastAttackRightHand;
+    public Material mat1;
+    public Material mat2;
+
+    public bool paused;
 
     public float playerSpeed;
 
     public MeshRenderer[] tintMeshes;
 
-    private Transform _tr;
-
-    public bool paused;
-
-    public bool attacking;
-
-    public bool dashing;
-
-    public GameController controller;
+    public WeaponController weapon1;
+    public WeaponController weapon2;
 
     public WeaponController[] weapons;
-
-    private bool lastAttackRightHand;
 
     private void Start()
     {
         _tr = transform;
 
-        foreach (var weapon in weapons)
-        {
-            weapon.FinishAttackEvent += () => attacking = false;
-        }
+        foreach (var weapon in weapons) weapon.FinishAttackEvent += () => attacking = false;
     }
 
     public void Init()
@@ -110,9 +105,6 @@ public class PlayerController : MonoBehaviour
 
     private void SetTint(Material mat, Color col)
     {
-        foreach (var mesh in tintMeshes)
-        {
-            mesh.material = mat;
-        }
+        foreach (var mesh in tintMeshes) mesh.material = mat;
     }
 }

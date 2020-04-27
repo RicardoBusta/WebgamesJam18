@@ -4981,7 +4981,9 @@ MonoBehaviour:
   paused: 0
   enemyPrefab: {fileID: 516694846672973132, guid: 514638e9f9163ab41847d631ad57ef1d,
     type: 3}
-  player: {fileID: 1078885037}
+  player: {fileID: 1045830601}
+  endGame: 0
+  spawnDistance: 50
 --- !u!4 &1550346329
 Transform:
   m_ObjectHideFlags: 0

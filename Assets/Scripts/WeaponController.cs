@@ -3,21 +3,20 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    public Animator animator;
-
     private static readonly int Attack1 = Animator.StringToHash("Attack");
     private static readonly int Walk = Animator.StringToHash("Walk");
 
-    public float maxAmmo;
+    private bool _hasExtraBehaviour;
+    private float _rechargeAmmoScale;
     public float ammo;
-    public float rechargeAmmoScale;
-
-    public event Action FinishAttackEvent;
+    public Animator animator;
 
     public ExtraWeaponBehaviour extraBehaviour;
 
-    private bool _hasExtraBehaviour;
-    private float _rechargeAmmoScale;
+    public float maxAmmo;
+    public float rechargeAmmoScale;
+
+    public event Action FinishAttackEvent;
 
     private void Start()
     {
@@ -59,9 +58,6 @@ public class WeaponController : MonoBehaviour
 
     public void TriggerExtraBehaviour()
     {
-        if (_hasExtraBehaviour)
-        {
-            extraBehaviour.TriggerEffect();
-        }
+        if (_hasExtraBehaviour) extraBehaviour.TriggerEffect();
     }
 }

@@ -6,12 +6,12 @@ namespace DefaultNamespace
     [RequireComponent(typeof(PlayerController))]
     public class KeyboardInput : MonoBehaviour
     {
-        private PlayerController _controller;
+        private const float Tolerance = 0.01f;
 
         private readonly RaycastHit[] _hit = new RaycastHit[1];
 
         private Camera _cam;
-        private const float Tolerance = 0.01f;
+        private PlayerController _controller;
 
         private void Start()
         {
@@ -25,26 +25,16 @@ namespace DefaultNamespace
             var h = Input.GetAxis("Horizontal");
 
             if (Math.Abs(v) < Tolerance && Math.Abs(h) < Tolerance)
-            {
                 _controller.Stop();
-            }
             else
-            {
                 _controller.Move(new Vector3(h, 0, v));
-            }
 
             var lmb = Input.GetMouseButtonDown(0);
 
-            if (lmb)
-            {
-                _controller.AttackLeftHand();
-            }
+            if (lmb) _controller.AttackLeftHand();
 
             var rmb = Input.GetMouseButtonDown(1);
-            if (rmb)
-            {
-                _controller.AttackRightHand();
-            }
+            if (rmb) _controller.AttackRightHand();
 
             if (Physics.RaycastNonAlloc(_cam.ScreenPointToRay(Input.mousePosition), _hit, LayerMask.GetMask("Input")) >
                 0)
