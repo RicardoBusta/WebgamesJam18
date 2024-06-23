@@ -28,11 +28,24 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 7fb8334e105dd7347ad80aece926eb3a, type: 3}
-    totalSpriteSurfaceArea: 524625
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - c048bdc22f126e84f90938aa811321c7: 21300000
+    - c5f64283ebd435d4697c1aff7cae54e5: 7449052399205803541
+    - c5f64283ebd435d4697c1aff7cae54e5: 2781533676904308770
+    - c5f64283ebd435d4697c1aff7cae54e5: 6384537630571050319
+    - c5f64283ebd435d4697c1aff7cae54e5: -2153854721710166906
+    - c5f64283ebd435d4697c1aff7cae54e5: -939168919852961171
+    - 467d6484f47e5bd47b77ebd654242c25: 21300000
+    - f14c867a7d7bb2b4ba967bd998d2d2dc: 21300000
+    - 7793bb5b7de31a142b6d63fb64ea2092: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: c048bdc22f126e84f90938aa811321c7, type: 3}
@@ -54,5 +67,6 @@ SpriteAtlas:
   - UI
   - enemyface
   - gunfire
+  m_RenderDataMap: {}
   m_Tag: Sprites
   m_IsVariant: 0
